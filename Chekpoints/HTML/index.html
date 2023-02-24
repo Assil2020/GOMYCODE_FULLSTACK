@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-cjD8QfIg+92YFwvFFJnlStj8ddIwtzZp5pAZF3bq3Ec9fjrJMoUeKpUvT6SK+M6mJn6zKcl6QlEp/kiSS29XKg==" crossorigin="anonymous">
     <title>Portfolio Web Page</title>
+    <link rel="stylesheet" href="/Chekpoints/CSS/styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 </head>
 <body>
 <div id="header">
     <div class="container">
             <nav>
+                <img src="img/logo.png" class="logo">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -20,16 +22,18 @@
                  </ul>
             </nav>
         <div class="header-text">
-                <h1>Hello, I'm Assil<br>Kherfi from Algeria</h1> 
+            <p>Data Scientist</p>
+                <h1>Hello, I'm <span>Assil</span><br>Kherfi from Algeria</h1> 
         </div>
     </div>
 </div> 
 <main>
     <!-- -----------------------------------------------------------about----------------------------------------------------------- -->
     <section id="about">
+        <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="img/temp_image_20230218_121009_b9d81e45-e508-46d5-842b-ca1cfd61476f.jpeg" alt="Portrait d'Assil Kherfi">
+                    <img src="img/profile.jpeg" alt="Portrait d'Assil Kherfi">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
@@ -45,74 +49,99 @@
                        Currently, I'm considering expanding my coding skills by training in Fullstack.</p>
                 </div> 
             </div>
+        </div>
     </section>
     <!-- -----------------------------------------------------------work----------------------------------------------------------- -->
     <section id="work">
-        <h1 class="sub-title">My Work</h1>
-        <div>
-            <p>My role is a combination of computer science, statistics, and mathematics. I analyze, process, and model data, and then 
-                interpret the results to create action plans for businesses and other organizations. <br>Discover the role of a data 
-                scientist through this video.</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/uswU1s3M2VE" title="What Is Data Science? (Explained in 5 Minutes)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div> 
+        <div class="container">
+            <div class="row">
+                <div class="work-col-1">
+                    <h1 class="sub-title">My Work</h1>
+                    <p>My role is a combination of computer science, statistics, and mathematics. I analyze, process, and model data, and then 
+                        interpret the results to create action plans for businesses and other organizations. <br> Discover the role of a data 
+                        scientist through this video.</p>
+                </div> 
+                <div class="work-col-2">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/uswU1s3M2VE" title="What Is Data Science? (Explained in 5 Minutes)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- -----------------------------------------------------------resume----------------------------------------------------------- -->
     <section id="resume">
-        <h1 class="sub-title">My Resume</h1>
-        <div class="tab-titles">
-            <p class="tab-links active-link">Skills</p>
-            <p class="tab-links">Experience</p>
-            <p class="tab-links">Education</p>
-        </div>
-        <div class="tab-contents active-tab" id="skills">
-            <ul>
-                <li><span>Machine Learning</span><br>Solving complex problems in various domains such as computer vision, natural language processing, prediction, recommendation, and optimization.</li>
-                <li><span>Deep Learning</span><br>Ability to design, implement, and deploy deep neural network models to solve complex problems in various domains such as image recognition, speech recognition, natural language processing, etc.</li>
-                <li><span>Fullstack</span><br>Ability to design, implement, and deploy complete web applications (server-side and client-side) using multiple technologies and programming languages, including front-end technologies like HTML, CSS, JavaScript and back-end technologies like Node.js, Ruby on Rails, Python, etc.</li>
-            </ul>
-        </div>
-        <div class="tab-contents" id="experience">
-            <ul>
-                <li><span>2021 - Current</span><br>Data Scientist</li>
-                <li><span>2019 - 2021</span><br>Senior Data &amp; Quality Control Executive</li>
-                <li><span>2013 - 2019</span><br>Technical Studies Engineer</li>
-            </ul>
-        </div>
-        <div class="tab-contents" id="education">
-            <ul>
-                <li><span>2023 - current</span><br>FULLSTACK, GOMYCODE ALGERIA </li>
-                <li><span>2021 - 2021</span><br>Artificial Intelligence (Samsung Innovation Campus), GOMYCODE ALGERIA </li>
-                <li><span>2021 - 2021</span><br>Artificial Intelligence (Deep Learning), GOMYCODE ALGERIA </li>
-                <li><span>2013 - 2014</span><br>Master’s in Management and Business Economics, National School of Statistics and Applied Economics  </li>
-                <li><span>2006 - 2013</span><br>State Engineer in Statistics and Applied Economics, Finance and Actuarial, National School of Statistics and Applied Economics  </li>
-            </ul>
+        <div class="container-resume">
+            <h1 class="sub-title">My Resume</h1>
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>Machine Learning</span><br>Solving complex problems in various domains such as computer vision, natural language processing, prediction, recommendation, and optimization.</li>
+                    <li><span>Deep Learning</span><br>Ability to design, implement, and deploy deep neural network models to solve complex problems in various domains such as image recognition, speech recognition, natural language processing, etc.</li>
+                    <li><span>Fullstack</span><br>Ability to design, implement, and deploy complete web applications (server-side and client-side) using multiple technologies and programming languages, including front-end technologies like HTML, CSS, JavaScript and back-end technologies like Node.js, Ruby on Rails, Python, etc.</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span>2021 - Current</span><br>Data Scientist</li>
+                    <li><span>2019 - 2021</span><br>Senior Data &amp; Quality Control Executive</li>
+                    <li><span>2013 - 2019</span><br>Technical Studies Engineer</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>2023 - current</span><br>FULLSTACK, GOMYCODE ALGERIA </li>
+                    <li><span>2021 - 2021</span><br>Artificial Intelligence (Samsung Innovation Campus), GOMYCODE ALGERIA </li>
+                    <li><span>2021 - 2021</span><br>Artificial Intelligence (Deep Learning), GOMYCODE ALGERIA </li>
+                    <li><span>2013 - 2014</span><br>Master’s in Management and Business Economics, National School of Statistics and Applied Economics  </li>
+                    <li><span>2006 - 2013</span><br>State Engineer in Statistics and Applied Economics, Finance and Actuarial, National School of Statistics and Applied Economics  </li>
+                </ul>
+            </div>
         </div>
     </section>    
     <!-- -----------------------------------------------------------contact----------------------------------------------------------- -->
     <section id="contact">
-        <h1>Contact Me</h1>
-        <form>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required><br>
-
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required><br>
-
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea><br>
-          <button type="submit">Send Message</button>
-        </form>
+        <div class="container">
+            <div class="contact">
+                <h1 class="sub-title">Contact Me</h1>
+                <form>
+                    <input type="text", name="Name" placeholder="Your Name" required>
+                    <input type="email", name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="10" placeholder="Your Message"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </section>
 </main> 
 
 <footer>
-    <div>
-        <i class="fas fa-phone"></i> +213 770 258 646
-      </div>
-      <div>
-        <i class="fab fa-linkedin"></i> <a href="www.linkedin.com/in/kherfi-assil-khadir">www.linkedin.com/in/kherfi-assil-khadir</a>
-      </div>
-    <p>&copy; 2023 Assil Portfolio</p>
+    <div class="container">
+        </div class="copyright">
+            <p>&copy; 2023 KHERFI Khadir Assil</p>
+        </div>
+        <div>
+            <i class="fas fa-phone"></i> +213 770 258 646
+        </div>
+        <div>
+            <i class="fab fa-linkedin"></i> <a href="www.linkedin.com/in/kherfi-assil-khadir">www.linkedin.com/in/kherfi-assil-khadir</a>
   </footer>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link")
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
 </body>
 </html>
