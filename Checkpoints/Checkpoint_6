@@ -1,0 +1,37 @@
+ALGORITHM sentence_read
+VAR
+    sentence : STRING
+    words : ARRAY OF STRING
+    length, word_count, vowel_count : INTEGER
+    current_word : STRING
+    current_char : CHAR
+    
+BEGIN
+    length := 0
+    word_count := 0
+    vowel_count := 0
+
+    WRITE "Hello, I'm Assil and I'm 34 years old."
+    READ sentence
+    
+    words := SPLIT(sentence, " ")
+
+    FOR i FROM 1 TO LENGTH(words) DO
+        current_word := words[i]
+        
+        FOR j FROM 1 TO LENGTH(current_word) DO
+            current_char := current_word[j]
+            length := length + 1
+            
+            IF current_char IN ["a", "e", "i", "o", "u", "y"] THEN
+                vowel_count := vowel_count + 1
+            END IF
+        END FOR
+        
+        word_count := word_count + 1
+END FOR
+
+    WRITE "The sentence contains ", length, " characters."
+    WRITE "The sentence contains ", word_count, " words."
+    WRITE "The sentence contains ", vowel_count, " vowels."
+
