@@ -1,0 +1,47 @@
+ALGORITHM sum_distinct_elements
+
+VAR
+    Set1, Set2 : ARRAY_OF INTEGER
+    distinct_elements := {}
+
+BEGIN
+    S := 0
+    FOR each e in Set1 do:
+        if e not in Set2 then:
+            add e to distinct_elements
+            S := S + e
+    FOR each e in Set2 do:
+        if e not in Set1 then:
+            add e to distinct_elements
+            S := S + e
+
+    Return S and distinct_elements
+END
+
+ALGORITHM dot_product
+
+VAR
+    n : INTEGER
+    v1, v2 : ARRAY_OF INTEGER
+    dot_product_value : INTEGER
+
+BEGIN
+    FUNCTION dot_product(v1, v2):
+        p := 0
+        FOR i FROM 0 TO length of v1 - 1 DO
+            p := p + (v1[i] * v2[i])
+        END FOR
+            RETURN p
+    END FUNCTION
+
+    n := 3
+    FOR i FROM 1 TO n DO
+        READ v1, v2
+        dot_product_value := dot_product(v1, v2)
+        IF dot_product_value = 0 THEN
+            PRINT "The vectors are orthogonal"
+        ELSE
+            PRINT "The vectors are not orthogonal"
+        END IF
+    END FOR    
+END
