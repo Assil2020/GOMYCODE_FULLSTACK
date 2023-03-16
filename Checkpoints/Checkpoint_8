@@ -1,0 +1,14 @@
+ALGORITHM Sort_Insertion(arr)
+
+FOR i = 1 to n-1 do:
+    j = i-1
+    key = arr[i]
+    WHILE j >= 0 AND arr[j] > key do:
+        arr[j+1] = arr[j]
+        j = j-1
+        arr[j+1] = key
+    END WHILE
+
+END FOR
+
+RETURN arr  
