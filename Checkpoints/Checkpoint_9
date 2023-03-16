@@ -1,0 +1,11 @@
+FUNCTION palindrome(word : STRING) : BOOLEAN
+BEGIN
+    IF LENGTH(word) <= 1 THEN
+        RETURN TRUE
+    END_IF
+    
+    IF FIRST(word) = LAST(word) THEN
+        RETURN palindrome(SUBSTRING(word, 2, LENGTH(word)-2))
+    ELSE
+        RETURN FALSE
+    END_IF
